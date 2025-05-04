@@ -21,6 +21,7 @@
             background-color: yellow;
             border: 5px dashed black;
             padding: 20px;
+            touch-action: manipulation;
         }
         .content {
             font-size: 18px;
@@ -28,26 +29,49 @@
             color: cyan;
             padding: 50px;
             border: 10px double orange;
+            animation: scrollText 5s linear infinite;
+        }
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @media (max-width: 800px) {
+            h1 { font-size: 30px; }
+            button { font-size: 18px; padding: 10px; }
+            .content { font-size: 14px; padding: 30px; }
         }
     </style>
 </head>
 <body>
     <h1>WELCOME TO THIS AWFUL PAGE!</h1>
 
-    <!-- Audio element to play ringtone.mp3 -->
-    <audio id="sound" src="ringtone.mp3" autoplay></audio>
-
     <div class="buttons">
-        <button onclick="document.getElementById('sound').play()">Play That Terrible Sound Again!</button>
+        <button onclick="playSound()">Play That Terrible Sound Again!</button>
         <button onclick="alert('Why are you still here?')">Another One!</button>
         <button onclick="alert('Help!')">Help!</button>
     </div>
 
     <div class="content">
         <p>This text is barely readable against the background. It's way too big, poorly styled, and makes your eyes hurt.</p>
-        <marquee behavior="scroll" direction="right" scrollamount="15">
-            <strong>LOOK AT THIS MOVING TEXT! SO UNNECESSARY!</strong>
-        </marquee>
+        <strong>LOOK AT THIS MOVING TEXT! SO UNNECESSARY!</strong>
     </div>
+
+    <!-- Audio element -->
+    <audio id="sound" src="ringtone.mp3"></audio>
+
+    <script>
+        function playSound() {
+            let audio = document.getElementById("sound");
+            audio.play();
+        }
+        
+        window.onload = function() {
+            setTimeout(() => {
+                if (confirm("Do you want to hear this ridiculous sound?")) {
+                    playSound();
+                }
+            }, 500);
+        };
+    </script>
 </body>
 </html>
