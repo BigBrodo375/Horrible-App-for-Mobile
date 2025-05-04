@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Another Horrible Page</title>
+    <style>
+        body {
+            background-image: repeating-linear-gradient(45deg, red, yellow, green, blue, purple);
+            font-family: Wingdings, Papyrus, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: cyan;
+            font-size: 60px;
+            text-shadow: 4px 4px 12px black;
+            animation: spinText 3s infinite linear;
+        }
+        @keyframes spinText {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        button {
+            font-size: 24px;
+            background-color: hotpink;
+            border: 7px dotted white;
+            padding: 20px;
+            box-shadow: 10px 10px 20px black;
+        }
+        .content {
+            font-size: 20px;
+            background-color: lime;
+            color: white;
+            padding: 40px;
+            border: 15px solid brown;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translateX(-10px); }
+            100% { transform: translateX(10px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO CHAOS!</h1>
+
+    <div class="buttons">
+        <button onclick="alert('Terrible choice!')">Click Me!</button>
+        <button onclick="alert('Still here?')">Another One!</button>
+        <button onclick="alert('Please leave.')">No More!</button>
+    </div>
+
+    <div class="content">
+        <p>This is the worst design ever. Everything moves, everything clashes, and you can barely read this.</p>
+        <p><blink>Does this text blink? It should!</blink></p>
+    </div>
+</body>
+</html>
