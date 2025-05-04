@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Badly Designed Page</title>
+    <title>Badly Designed Page with Sound</title>
     <style>
         body {
             background-color: lime;
@@ -33,11 +33,16 @@
 </head>
 <body>
     <h1>WELCOME TO THIS AWFUL PAGE!</h1>
+
+    <!-- Audio element to play ringtone.mp3 -->
+    <audio id="sound" src="ringtone.mp3" autoplay></audio>
+
     <div class="buttons">
-        <button onclick="alert('Chaos!')">Click Me!</button>
-        <button onclick="alert('What is this design?')">Another One!</button>
-        <button onclick="alert('Please make it stop.')">Help!</button>
+        <button onclick="document.getElementById('sound').play()">Play That Terrible Sound Again!</button>
+        <button onclick="alert('Why are you still here?')">Another One!</button>
+        <button onclick="alert('Help!')">Help!</button>
     </div>
+
     <div class="content">
         <p>This text is barely readable against the background. It's way too big, poorly styled, and makes your eyes hurt.</p>
         <marquee behavior="scroll" direction="right" scrollamount="15">
